@@ -2,24 +2,11 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
-
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Dashboard from './components/dashboard.component';
 
 function App() {
-  const history = useHistory();
- 
-  const Logout = async () => {
-      try {
-          await axios.delete('http://localhost:5000/logout');
-          history.push("/");
-      } catch (error) {
-          console.log(error);
-      }
-  }
   return (<Router>
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -32,9 +19,6 @@ function App() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" onClick={Logout} >Logout</Link>
               </li>
             </ul>
           </div>

@@ -26,7 +26,8 @@ const Dashboard = () => {
  
     return (
         <div className="container mt-5">
-            <h1>Welcome Back: {name}</h1>
+            <h3>Welcome Back: {name}</h3>
+            <p>Your token will expire at: {expire}</p>
         </div>
     )
 }

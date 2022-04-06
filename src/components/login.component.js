@@ -15,10 +15,7 @@ const Login = () => {
                 email: email,
                 password: password
             })
-            .then(res => {
-                localStorage.setItem('accessToken', res.data.accessToken);
-                history.push('/dashboard');
-            });
+            history.push("/dashboard");
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
